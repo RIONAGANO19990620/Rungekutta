@@ -1,11 +1,9 @@
-import streamlit as st
-
+from View.View import View
+from ViewModel.ViewTerm import ViewTerm
 
 def main():
-    n = st.number_input(label='What is your favorite number?',
-                        value=42,
-                        )
-    st.write('input: ', n)
+    view = View()
+    view.create_view()
 
 
 if __name__ == '__main__':
