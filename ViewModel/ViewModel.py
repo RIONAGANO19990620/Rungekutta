@@ -31,6 +31,7 @@ class ViewModel:
                                 ViewModel.mesh.dt, ViewModel.mesh.dx)
         RungeKutta.plot(data, ViewModel.mesh.t_array, ViewModel.mesh.x_array, title)
         plt.legend()
+        plt.rcParams["font.size"] = 25
         return fig
 
     @staticmethod

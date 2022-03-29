@@ -21,8 +21,11 @@ class View:
         # sidebarにおけるパラメータ設定
         st.sidebar.markdown('Set Parameter')
         term_dict: Dict[ViewTerm, float] = {}
+        num = 0
         for term in ViewTerm:
-            term_num = st.sidebar.number_input(term.value)
+            num += 1
+            st.sidebar.latex(term.value)
+            term_num = st.sidebar.number_input('上の項の係数を入力してください({})'.format(num))
             term_dict[term] = term_num
         return term_dict
 
@@ -30,6 +33,7 @@ class View:
     def __create_plot(term_dict: Dict[ViewTerm, float]):
         view_model = ViewModel(term_dict)
         fig = view_model.create_fig()
+
         st.subheader('Calculation Result')
         st.pyplot(fig)
 
