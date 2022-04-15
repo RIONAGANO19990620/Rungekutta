@@ -10,11 +10,11 @@ class View:
 
     @staticmethod
     def __get_mathematical_expression(term_dict) -> str:
-        formula = r'\frac{\partial u}{\partial t}='
+        formula = r'\frac{\partial u}{\partial t}+'
         for term in term_dict:
             if term_dict[term] != 0:
                 formula += str(term_dict[term]) + term.value + '+'
-        return formula[:-1]
+        return formula[:-1] + '=0'
 
     @staticmethod
     def __create_side_menu() -> Dict[ViewTerm, float]:

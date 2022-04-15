@@ -40,17 +40,17 @@ class ViewModel:
         for term in term_dict:
             num = term_dict[term]
             if term is ViewTerm.du_dx:
-                term_instance = D1Dx(num)
+                term_instance = D1Dx(-num)
             elif term is ViewTerm.u_du_dx:
-                term_instance = D1Dx(num, True)
+                term_instance = D1Dx(-num, True)
             elif term is ViewTerm.d2u_dx2:
-                term_instance = D2Dx(num)
+                term_instance = D2Dx(-num)
             elif term is ViewTerm.u_d2u_dx2:
-                term_instance = D2Dx(num, True)
+                term_instance = D2Dx(-num, True)
             elif term is ViewTerm.d3u_dx3:
-                term_instance = D3Dx(num)
+                term_instance = D3Dx(-num)
             elif term is ViewTerm.u_d3u_dx3:
-                term_instance = D3Dx(num, True)
+                term_instance = D3Dx(-num, True)
             else:
                 raise ValueError
             term_list.append(term_instance)
