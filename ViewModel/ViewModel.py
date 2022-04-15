@@ -45,12 +45,8 @@ class ViewModel:
                 term_instance = D1Dx(-num, True)
             elif term is ViewTerm.d2u_dx2:
                 term_instance = D2Dx(-num)
-            elif term is ViewTerm.u_d2u_dx2:
-                term_instance = D2Dx(-num, True)
             elif term is ViewTerm.d3u_dx3:
                 term_instance = D3Dx(-num)
-            elif term is ViewTerm.u_d3u_dx3:
-                term_instance = D3Dx(-num, True)
             else:
                 raise ValueError
             term_list.append(term_instance)
